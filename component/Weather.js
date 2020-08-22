@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text, ImageBackground, StyleSheet, View } from 'react-native'
+import { Text, ImageBackground, StyleSheet, View, Image } from 'react-native'
 import Forecast from './Forecast'
 
 export default function Weather(props) {
@@ -33,8 +33,35 @@ export default function Weather(props) {
         }
     }, [props.zipCode])
 
+    let pic = '';
+
+    if (props.zipCode == '90000') {
+        pic = require("../img/songkhla.jpg");
+    }
+    if (props.zipCode == '91000') {
+        pic = require("../img/satun.jpg");
+    }
+    if (props.zipCode == '92000') {
+        pic = require("../img/trang.jpg");
+    }
+    if (props.zipCode == '94000') {
+        pic = require("../img/pattani.jpg");
+    }
+    if (props.zipCode == '20000') {
+        pic = require("../img/chonburi.jpg");
+    }
+    if (props.zipCode == '40000') {
+        pic = require("../img/khonkaen.jpg");
+    }
+    if (props.zipCode == '50000') {
+        pic = require("../img/chiangmai.jpg");
+    }
+    if (props.zipCode == '57000') {
+        pic = require("../img/chiangrai.jpg");
+    }
+
     return (
-        <ImageBackground source={require('../bg.png')} style={styles.backdrop}>
+        <ImageBackground source={pic} style={styles.backdrop}>
             <View style={styles.background}>
                 <Text style={styles.text}>Zip code: {props.zipCode}</Text>
                 <Forecast {...forecastInfo} />
@@ -46,6 +73,7 @@ export default function Weather(props) {
 
 const styles = StyleSheet.create({
     backdrop: {
+        // backgroundColor: {mainweather},
         flexDirection: 'row',
         alignItems: 'center',
         width: '100%',

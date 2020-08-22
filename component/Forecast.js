@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Image } from 'react-native'
 import { weatherConditions } from './WeatherConditions';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -28,22 +28,28 @@ export default function Forecast(props) {
 
     return (
         <View>
-            <MaterialCommunityIcons
-                size={72}
-                name={mainweather}
-                color={'#fff'}
-                style={styles.seticon}
-            />
-            <Text style={styles.text}>'{props.name}'</Text>
-            <Text style={styles.text}>{props.main}</Text>
-            <Text style={styles.text}>{props.description}</Text>
-            <Text style={styles.text}>{props.temp} °C</Text>
-            <Text style={styles.text1}>Max: {props.tempmax} °C  Min: {props.tempmin} °C</Text>
+            <View>
+                <MaterialCommunityIcons
+                    size={72}
+                    name={mainweather}
+                    color={'#fff'}
+                    style={styles.seticon}
+                />
+                <Text style={styles.text}>'{props.name}'</Text>
+                <Text style={styles.text}>{props.main}</Text>
+                <Text style={styles.text}>{props.description}</Text>
+                <Text style={styles.text}>{props.temp} °C</Text>
+                <Text style={styles.text1}>Max: {props.tempmax} °C  Min: {props.tempmin} °C</Text>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    img: {
+        width: 320,
+        height: 150,
+    },
     seticon: {
         paddingLeft: 95,
     },

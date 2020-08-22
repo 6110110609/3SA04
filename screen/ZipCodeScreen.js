@@ -8,10 +8,10 @@ const availableZipItems = [
     { place: 'Satun', code: '91000' },
     { place: 'Trang', code: '92000' },
     { place: 'Pattani', code: '94000' },
-    { place: 'Yala', code: '95000' },
     { place: 'Chonburi', code: '20000' },
     { place: 'Khonkaen', code: '40000' },
     { place: 'Chiangmai', code: '50000' },
+    { place: 'Chiangrai', code: '57000' },
 ]
 
 const ZipItem = ({ place, code, navigation }) => (
@@ -24,6 +24,7 @@ const ZipItem = ({ place, code, navigation }) => (
         </View>
     </TouchableHighlight>
 )
+
 export default function zipCodeScreen() {
     const navigation = useNavigation()
     return (
