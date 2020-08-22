@@ -31,7 +31,7 @@ export default function zipCodeScreen() {
             <FlatList
                 data={availableZipItems}
                 keyExtractor={item => item.code}
-                renderItem={({ item }) => <ZipItem {...item} navigation={navigation} />}
+                renderItem={({ item }) => <ZipItem {...item} navigation={navigation}/>}
             />
         </View>
     )
