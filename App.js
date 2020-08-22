@@ -12,7 +12,7 @@ const Stack = createStackNavigator()
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
         <Stack.Screen name="Home" component={ZipCodeScreen}/>
         <Stack.Screen name="Weather" component={WeatherScreen} />
       </Stack.Navigator>
